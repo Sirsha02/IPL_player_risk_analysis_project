@@ -15,13 +15,8 @@ This project tackles a key problem in T20 cricket analytics: **How can we object
 ## Project Structure
 
 IPL-Risk-Modeling/
-│
-├── 1.preprocessing.ipynb          # Data cleaning, merging, and initial aggregation
-├── 2.impact_score.ipynb           # Calculating batting and bowling impact scores
-├── utils.py                       # Utility functions for data loading and calculations
-|         
-│
-│
-├── outputs/                       # Processed data and results
-│
-└── README.md
+1.preprocessing.ipynb          # Data cleaning, merging, and initial aggregation
+2.impact_score.ipynb           # Calculating batting and bowling impact scores
+utils.py                       # Utility functions for data loading and calculations
+outputs/                       # Processed data and results
+
