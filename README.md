@@ -1,22 +1,46 @@
 # IPL Player Valuation & Risk Modeling
 
-A quantitative data science project that treats cricketers as financial assets, applying risk modeling techniques to evaluate IPL player performance and auction valuation.
+A comprehensive machine learning system that predicts the outcome of IPL cricket matches. This project demonstrates end-to-end data processing pipeline from raw data processing to deployed predictive models.
 
-## Project Overview
+## Data Sources
+- IPL ball-by-ball dataset (2008-2025 seasons)
+- 278,000+ ball records
+- 64 features per ball 
 
-This project tackles a key problem in T20 cricket analytics: **How can we objectively compare players across different roles and quantify the investment risk associated with acquiring them?** By applying financial risk concepts like **Value at Risk (VaR)** and **Monte Carlo simulation** to player performance data, this model provides a framework for data-driven decision-making in player auctions.
+## Key Features
+1. **Data Preprocessing**
+- Handles missing values and data inconsistencies
+- Standardizes venue names and team names
+- Creates match-level summaries from ball-by-ball data
+- Handles categorical variable encoding
 
-## Objectives
+2. **Feature Engineering**
+- Player Impact Scoring:
+-- Batting impact (runs, average, strike rate)
+-- Bowling impact (wickets, economy, strike rate)
+-- All-rounder impact scoring
+-- Z-score normalization within seasons
 
-- **Standardize Performance Metrics:** Create a unified "Player Impact Score" for direct comparison between batsmen and bowlers
-- **Quantify Risk:** Calculate Value-at-Risk (VaR) to measure downside performance risk
-- **Optimize Portfolios:** Develop a framework to build optimal player portfolios under budget constraints
+- Team Strength Calculation:
+-- Composite team strength from player impacts
+-- Separate batting and bowling strength metrics
+-- All-rounder contribution weighting
+-- Historical season-based strength calculation
 
-## Project Structure
+- Match Context Features:
+-- Target runs and required run rate
+-- Venue-specific factors
+-- Strength differentials between teams
 
-IPL-Risk-Modeling/
-1.preprocessing.ipynb          # Data cleaning, merging, and initial aggregation
-2.impact_score.ipynb           # Calculating batting and bowling impact scores
-utils.py                       # Utility functions for data loading and calculations
-outputs/                       # Processed data and results
+3. **Machine Learning Models**
+- Trained and compared 6 different algorithms:
+Logistic Regression - Baseline interpretable model
+Random Forest - Robust ensemble method
+Gradient Boosting - Sequential error correction
+XGBoost - State-of-the-art performance
+K-Nearest Neighbors - Distance-based learning
+Support Vector Machine - Boundary-based classification
 
+4. **Model Performance**
+- Best Model: Support Vector Machine
+- Test Accuracy: 72%
